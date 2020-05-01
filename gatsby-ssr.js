@@ -11,7 +11,7 @@
 import React from 'react'
 import { extractStyles } from 'evergreen-ui'
 
-export function onRenderBody = ({ setHeadComponents }) => {
+export const onRenderBody = ({ setHeadComponents }) => {
   // Get the css and hydration script from Evergreen.
   const { css, hydrationScript } = extractStyles()
 
