@@ -148,7 +148,7 @@ const IndexPage = () => {
               padding={20}
               display={"flex"}
             >
-              <Avatar size={100} src={recipe.thumbnail} />
+              <Avatar size={100} src={`https://adsfencodo.cloudimg.io/v7/${recipe.thumbnail}`} />
               <Pane marginX={20} display="block">
                 <a href={recipe.href} target="_blank" rel="noopener noreferrer">
                   <Heading>{recipe.title}</Heading>
