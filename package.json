@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "le-cook",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Food Recipe App built with Gatsby and Evergreen",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "sozonome",
   "dependencies": {
     "axios": "^0.19.2",
     "evergreen-ui": "^4.27.4",
