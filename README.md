@@ -14,7 +14,7 @@ UI Component using Evergreen.
 - RecipePuppy API
 
 ## Deployment
-- Gatsby Cloud for building (real blazing fast for Gatsby Projects) -> Hosted to Vercel
+- Vercel
 
 ## Development Applications
 - React Hooks
