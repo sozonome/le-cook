@@ -19,7 +19,7 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Le Cook`,
-        short_name: `starter`,
+        short_name: `Le Cook`,
         start_url: `/`,
         background_color: `#0086c3`,
         theme_color: `#0086c3`,
