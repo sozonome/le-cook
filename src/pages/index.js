@@ -1,6 +1,4 @@
-import React, { useEffect, useState } from "react";
-
-import Layout from "../components/layout";
+import axios from "axios";
 import {
   Card,
   Heading,
@@ -12,9 +10,13 @@ import {
   Button,
   toaster,
   Paragraph,
+  ArrowLeftIcon,
+  ArrowRightIcon,
 } from "evergreen-ui";
+import React, { useEffect, useState } from "react";
+
+import Layout from "../components/layout";
 import { PROXY_URL, API_URL } from "../functions/fetchApi";
-import axios from "axios";
 import SEO from "../components/seo";
 
 const IndexPage = () => {
@@ -32,19 +34,23 @@ const IndexPage = () => {
   useEffect(() => {
     if (ingredientQuery.length > 0 || recipeInput.length > 0) {
       axios(
-        PROXY_URL + API_URL + `?i=${ingredientQuery}&q=${recipeInput}&p=${page}`
+        API_URL + `?i=${ingredientQuery}&q=${recipeInput}&p=${page}`, {
+          headers: {
+            origin: "https://localhost:3000"
+          }
+        }
       )
         .then(result => {
           setBusy(false);
           setData(result.data.results);
         })
-        .catch(error => {
+        .catch(() => {
           setBusy(false);
           toaster.danger("Error connecting to the dreamland");
         });
       return;
     }
-    axios(PROXY_URL + API_URL + `?p=${page}`)
+    axios(API_URL + `?p=${page}`)
       .then(result => {
         setBusy(false);
         setData(result.data.results);
@@ -148,7 +154,10 @@ const IndexPage = () => {
               padding={20}
               display={"flex"}
             >
-              <Avatar size={100} src={`https://adsfencodo.cloudimg.io/v7/${recipe.thumbnail}`} />
+              <Avatar
+                size={100}
+                src={`https://adsfencodo.cloudimg.io/v7/${recipe.thumbnail}`}
+              />
               <Pane marginX={20} display="block">
                 <a href={recipe.href} target="_blank" rel="noopener noreferrer">
                   <Heading>{recipe.title}</Heading>
@@ -167,7 +176,7 @@ const IndexPage = () => {
           <Button
             appearance="primary"
             intent="warning"
-            iconBefore="arrow-left"
+            iconBefore={<ArrowLeftIcon />}
             height={50}
             onClick={() => {
               setBusy(true);
@@ -180,7 +189,7 @@ const IndexPage = () => {
           <Button
             appearance="primary"
             intent="warning"
-            iconAfter="arrow-right"
+            iconAfter={<ArrowRightIcon />}
             height={50}
             float="right"
             onClick={() => {

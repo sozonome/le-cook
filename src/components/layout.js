@@ -5,11 +5,13 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
-import Header from "./header"
-import { Pane, Heading } from "evergreen-ui"
+import React from "react";
+import PropTypes from "prop-types";
+import { useStaticQuery, graphql } from "gatsby";
+import { Pane, Heading } from "evergreen-ui";
+
+import Header from "./header";
+
 import "../styles/global.css";
 
 const Layout = ({ children }) => {
@@ -21,7 +23,7 @@ const Layout = ({ children }) => {
         }
       }
     }
-  `)
+  `);
 
   return (
     <Pane>
@@ -34,21 +36,27 @@ const Layout = ({ children }) => {
         }}
       >
         <main>{children}</main>
-        <footer >
+        <footer>
           <Heading size={400} marginY={30}>
             © {new Date().getFullYear()}, Le Cook
             {` `}by{` `}
-            <a href="https://agustinusnathaniel.com" target="_blank" rel="noopener noreferrer">sozonome</a>. 
-            Powered by <a href="http://www.recipepuppy.com/">RecipePuppy</a>
-          </Heading> 
+            <a
+              href="https://agustinusnathaniel.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              sozonome
+            </a>
+            . Powered by <a href="http://www.recipepuppy.com/">RecipePuppy</a>
+          </Heading>
         </footer>
       </div>
     </Pane>
-  )
-}
+  );
+};
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-}
+};
 
-export default Layout
+export default Layout;
