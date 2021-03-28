@@ -20,3 +20,5 @@ UI Component using Evergreen.
 - React Hooks
 - Gatsby SSR
 
+## todo
+- switch to https://developer.edamam.com/edamam-recipe-api
